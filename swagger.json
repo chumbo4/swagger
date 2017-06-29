@@ -13,7 +13,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "192.168.99.100:30001",
+  "host": "localhost:8000",
   "tags": [
     {
       "name": "documents",
@@ -333,6 +333,13 @@
             "name": "option",
             "in": "path",
             "description": "MT option: A, B, C, D or E",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "documents MS -> documents",
             "required": true,
             "type": "string"
           }
