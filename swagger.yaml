@@ -3,16 +3,17 @@ info:
   description: "First protoype for ARKIS architecture"
   version: "1.0"
   title: "ARKIS API"
-  termsOfService: "example.com"
+  termsOfService: "https://github.com/serviceprototypinglab/arkismicroservices"
   contact:
     email: "ramz@zhaw.ch"
   license:
     name: "Arkis license"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "192.168.99.100:30917"
 #host: "localhost:8000"
 #host: "0.0.0.0:10001"
 #host: "192.168.99.100:31999"
-host: "192.168.99.100:30001"
+#host: "192.168.99.100:30001"
 tags:
 - name: "documents"
   description: "Operations about documents"
@@ -50,6 +51,12 @@ paths:
         description: "MT option: A, B, C, D or E"
         required: true
         type: "string"
+      - name: "Host"
+        in: "header"
+        description: "documents MS -> documents"
+        required: true
+        type: "string"
+        default: "documents"
       - in: "body"
         name: "raw"
         description: "Document object"
@@ -88,6 +95,12 @@ paths:
         required: true
         type: "integer"
         format: "int32"
+      - name: "Host"
+        in: "header"
+        description: "documents MS -> documents"
+        required: true
+        type: "string"
+        default: "documents"
       responses:
         200:
           description: "successful operation"
@@ -123,6 +136,12 @@ paths:
         required: true
         type: "integer"
         format: "int32"
+      - name: "Host"
+        in: "header"
+        description: "documents MS -> documents"
+        required: true
+        type: "string"
+        default: "documents"
       - in: "body"
         name: "raw"
         description: "Document object"
@@ -164,6 +183,12 @@ paths:
         required: true
         type: "integer"
         format: "int32"
+      - name: "Host"
+        in: "header"
+        description: "documents MS -> documents"
+        required: true
+        type: "string"
+        default: "documents"
       responses:
         200:
           description: "successful operation"
@@ -202,6 +227,12 @@ paths:
         required: true
         type: "integer"
         format: "int32"
+      - name: "Host"
+        in: "header"
+        description: "documents MS -> documents"
+        required: true
+        type: "string"
+        default: "documents"
       responses:
         200:
           description: "successful operation"
@@ -220,6 +251,9 @@ paths:
       summary: "Return the last document added for the user"
       description: "Return the last document added for the user"
       operationId: "getLast"
+      consumes:
+      - "application/json"
+      - "Access-Control-Allow-Headers: Content-Type, api_key, Authorization"
       produces:
       - "application/json"
       parameters:
@@ -234,6 +268,12 @@ paths:
         description: "MT option: A, B, C, D or E"
         required: true
         type: "string"
+      - name: "Host"
+        in: "header"
+        description: "documents MS -> documents"
+        required: true
+        type: "string"
+        default: "documents"
       responses:
         200:
           description: "Successful operation"
@@ -254,6 +294,13 @@ paths:
       operationId: "getUsers"
       produces:
       - "application/json"
+      parameters:
+      - name: "Host"
+        in: "header"
+        description: "User MS -> users"
+        required: true
+        type: "string"
+        default: "users"
       responses:
         200:
           description: "Successful operation"
@@ -284,6 +331,12 @@ paths:
         required: true
         schema:
           $ref: "#/definitions/UserPost"
+      - name: "Host"
+        in: "header"
+        description: "User MS -> users"
+        required: true
+        type: "string"
+        default: "users"
       responses:
         200:
           description: "Successful operation"
@@ -311,6 +364,12 @@ paths:
         required: true
         type: "integer"
         format: "int32"
+      - name: "Host"
+        in: "header"
+        description: "User MS -> users"
+        required: true
+        type: "string"
+        default: "users"
       responses:
         200:
           description: "Successful operation"
@@ -345,6 +404,12 @@ paths:
         required: true
         schema:
           $ref: "#/definitions/UserPost"
+      - name: "Host"
+        in: "header"
+        description: "User MS -> users"
+        required: true
+        type: "string"
+        default: "users"
       responses:
         200:
           description: "Successful operation"
@@ -371,6 +436,12 @@ paths:
         required: true
         type: "integer"
         format: "int32"
+      - name: "Host"
+        in: "header"
+        description: "User MS -> users"
+        required: true
+        type: "string"
+        default: "users"
       responses:
         200:
           description: "Successful operation"
@@ -473,5 +544,5 @@ definitions:
         type: "integer"
         format: "int32"
 externalDocs:
-  description: "Find out more about Arkis API"
-  url: "http://arkis.io/api"
+  description: "Find out more about Arkis Microservices"
+  url: "https://github.com/serviceprototypinglab/arkismicroservices"
