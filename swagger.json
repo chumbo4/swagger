@@ -4,7 +4,7 @@
     "description": "First protoype for ARKIS architecture",
     "version": "1.0",
     "title": "ARKIS API",
-    "termsOfService": "example.com",
+    "termsOfService": "https://github.com/serviceprototypinglab/arkismicroservices",
     "contact": {
       "email": "ramz@zhaw.ch"
     },
@@ -71,6 +71,14 @@
             "type": "string"
           },
           {
+            "name": "Host",
+            "in": "header",
+            "description": "documents MS -> documents",
+            "required": true,
+            "type": "string",
+            "default": "documents"
+          },
+          {
             "in": "body",
             "name": "raw",
             "description": "Document object",
@@ -124,6 +132,14 @@
             "required": true,
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "documents MS -> documents",
+            "required": true,
+            "type": "string",
+            "default": "documents"
           }
         ],
         "responses": {
@@ -174,6 +190,14 @@
             "required": true,
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "documents MS -> documents",
+            "required": true,
+            "type": "string",
+            "default": "documents"
           },
           {
             "in": "body",
@@ -233,6 +257,14 @@
             "required": true,
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "documents MS -> documents",
+            "required": true,
+            "type": "string",
+            "default": "documents"
           }
         ],
         "responses": {
@@ -294,7 +326,8 @@
             "in": "header",
             "description": "documents MS -> documents",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "default": "documents"
           }
         ],
         "responses": {
@@ -324,6 +357,10 @@
         "summary": "Return the last document added for the user",
         "description": "Return the last document added for the user",
         "operationId": "getLast",
+        "consumes": [
+          "application/json",
+          "Access-Control-Allow-Headers: Content-Type, api_key, Authorization"
+        ],
         "produces": [
           "application/json"
         ],
@@ -346,9 +383,10 @@
           {
             "name": "Host",
             "in": "header",
-            "description": "documents MS -> documents2",
+            "description": "documents MS -> documents",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "default": "documents"
           }
         ],
         "responses": {
@@ -380,6 +418,16 @@
         "operationId": "getUsers",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "User MS -> users",
+            "required": true,
+            "type": "string",
+            "default": "users"
+          }
         ],
         "responses": {
           "200": {
@@ -424,6 +472,14 @@
             "schema": {
               "$ref": "#/definitions/UserPost"
             }
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "User MS -> users",
+            "required": true,
+            "type": "string",
+            "default": "users"
           }
         ],
         "responses": {
@@ -464,6 +520,14 @@
             "required": true,
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "User MS -> users",
+            "required": true,
+            "type": "string",
+            "default": "users"
           }
         ],
         "responses": {
@@ -514,6 +578,14 @@
             "schema": {
               "$ref": "#/definitions/UserPost"
             }
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "User MS -> users",
+            "required": true,
+            "type": "string",
+            "default": "users"
           }
         ],
         "responses": {
@@ -552,6 +624,14 @@
             "required": true,
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "User MS -> users",
+            "required": true,
+            "type": "string",
+            "default": "users"
           }
         ],
         "responses": {
@@ -705,7 +785,7 @@
     }
   },
   "externalDocs": {
-    "description": "Find out more about Arkis API",
-    "url": "http://arkis.io/api"
+    "description": "Find out more about Arkis Microservices",
+    "url": "https://github.com/serviceprototypinglab/arkismicroservices"
   }
 }
