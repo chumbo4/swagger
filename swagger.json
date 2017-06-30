@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "First protoype for ARKIS architecture",
-    "version": "1.0",
-    "title": "ARKIS API",
+    "description": "Document management API. You can create, read, update and delete document for different tenants or search a pattern in a document. The API is developed with a microservices architecture following the principes of a cloud native application. This offers different multitenency options to persistante the documents. Also you have the option to add generic documents to the system and migrate the data between the different multitenant options. In addition it is using Kong (API Gateway) to add extra functionalities. ",
+    "version": "3.3",
+    "title": "ARKIS MICROSERVICES API",
     "termsOfService": "https://github.com/serviceprototypinglab/arkismicroservices",
     "contact": {
       "email": "ramz@zhaw.ch"
@@ -25,15 +25,15 @@
     },
     {
       "name": "search",
-      "description": "Search a pattern in a document"
+      "description": "TODO. Search a pattern in a document"
     },
     {
       "name": "data",
-      "description": "Add random documents to a user"
+      "description": "TODO. Add random documents to a user"
     },
     {
       "name": "migrate",
-      "description": "Migrate the documents between differents multi tenancy models"
+      "description": "TODO. Migrate the documents between differents multi tenancy models"
     }
   ],
   "schemes": [
